@@ -17,7 +17,7 @@ struct BankingApp: App {
     
     var body: some Scene {
         WindowGroup {
-            BankingContentView()
+            BankingContentView(totalBallanceViewModel: TotalBallanceViewModel())
         }
     }
 }

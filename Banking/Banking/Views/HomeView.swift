@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct HomeView: View {
+    @ObservedObject var accountListViewModel: AccountListViewModel
+    
     var body: some View {
-        Text("Good to be Home!")
+        List(accountListViewModel.accounts) { account in
+            AccountView(account: account)
+        }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(accountListViewModel: AccountListViewModel())
     }
 }

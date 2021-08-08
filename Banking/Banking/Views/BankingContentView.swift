@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct BankingContentView: View {
+    @ObservedObject var totalBallanceViewModel: TotalBallanceViewModel
+    
     var body: some View {
         HStack(spacing: 30) {
             Image("bella")
@@ -18,11 +20,12 @@ struct BankingContentView: View {
             Spacer()
             VStack(spacing: 5) {
                 Text("Total Ballance:")
-                Text("100.000 RON")
+                Text("\(String(format: "%.2f", totalBallanceViewModel.totalBallance)) RON")
             }.padding(15)
         }
+        
         TabView {
-            HomeView().tabItem {
+            HomeView(accountListViewModel: AccountListViewModel()).tabItem {
                 Image(systemName: "house.circle")
                 Text("Home")
             }
@@ -42,6 +45,6 @@ struct BankingContentView: View {
 
 struct BankingContentView_Previews: PreviewProvider {
     static var previews: some View {
-        BankingContentView()
+        BankingContentView(totalBallanceViewModel: TotalBallanceViewModel())
     }
 }

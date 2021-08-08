@@ -17,6 +17,12 @@
 		43F6A0DA26C0099900A74DD4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F6A0D926C0099900A74DD4 /* HomeView.swift */; };
 		43F6A0DC26C009C500A74DD4 /* DepositView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F6A0DB26C009C500A74DD4 /* DepositView.swift */; };
 		43F6A0DE26C009E500A74DD4 /* TransferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F6A0DD26C009E500A74DD4 /* TransferView.swift */; };
+		43F6A0E126C01A2200A74DD4 /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F6A0E026C01A2200A74DD4 /* AccountRepository.swift */; };
+		43F6A0E326C01AE600A74DD4 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F6A0E226C01AE600A74DD4 /* AccountModel.swift */; };
+		43F6A0E526C033D800A74DD4 /* AccountListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F6A0E426C033D800A74DD4 /* AccountListViewModel.swift */; };
+		43F6A0E726C04C1600A74DD4 /* TotalBallanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F6A0E626C04C1600A74DD4 /* TotalBallanceViewModel.swift */; };
+		43F6A0E926C059E000A74DD4 /* ConversionUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F6A0E826C059E000A74DD4 /* ConversionUtils.swift */; };
+		43F6A0EB26C05DB300A74DD4 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F6A0EA26C05DB300A74DD4 /* AccountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +36,12 @@
 		43F6A0D926C0099900A74DD4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		43F6A0DB26C009C500A74DD4 /* DepositView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositView.swift; sourceTree = "<group>"; };
 		43F6A0DD26C009E500A74DD4 /* TransferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferView.swift; sourceTree = "<group>"; };
+		43F6A0E026C01A2200A74DD4 /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
+		43F6A0E226C01AE600A74DD4 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
+		43F6A0E426C033D800A74DD4 /* AccountListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountListViewModel.swift; sourceTree = "<group>"; };
+		43F6A0E626C04C1600A74DD4 /* TotalBallanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalBallanceViewModel.swift; sourceTree = "<group>"; };
+		43F6A0E826C059E000A74DD4 /* ConversionUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionUtils.swift; sourceTree = "<group>"; };
+		43F6A0EA26C05DB300A74DD4 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +79,8 @@
 				43F6A0DF26C013D100A74DD4 /* Utils */,
 				43F6A0D726C008FF00A74DD4 /* Repositories */,
 				43F6A0D626C008F200A74DD4 /* Models */,
-				43F6A0D526C008E300A74DD4 /* Views */,
 				43F6A0D826C0096200A74DD4 /* ViewModels */,
+				43F6A0D526C008E300A74DD4 /* Views */,
 				43F6A0BF26BD4E0400A74DD4 /* BankingApp.swift */,
 				43F6A0C326BD4E0600A74DD4 /* Assets.xcassets */,
 				43F6A0C826BD4E0600A74DD4 /* Info.plist */,
@@ -93,6 +105,7 @@
 				43F6A0D926C0099900A74DD4 /* HomeView.swift */,
 				43F6A0DB26C009C500A74DD4 /* DepositView.swift */,
 				43F6A0DD26C009E500A74DD4 /* TransferView.swift */,
+				43F6A0EA26C05DB300A74DD4 /* AccountView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -100,6 +113,7 @@
 		43F6A0D626C008F200A74DD4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				43F6A0E226C01AE600A74DD4 /* AccountModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -107,6 +121,7 @@
 		43F6A0D726C008FF00A74DD4 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				43F6A0E026C01A2200A74DD4 /* AccountRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -114,6 +129,8 @@
 		43F6A0D826C0096200A74DD4 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				43F6A0E426C033D800A74DD4 /* AccountListViewModel.swift */,
+				43F6A0E626C04C1600A74DD4 /* TotalBallanceViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -121,6 +138,7 @@
 		43F6A0DF26C013D100A74DD4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				43F6A0E826C059E000A74DD4 /* ConversionUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -204,7 +222,13 @@
 			files = (
 				43F6A0DA26C0099900A74DD4 /* HomeView.swift in Sources */,
 				43F6A0DE26C009E500A74DD4 /* TransferView.swift in Sources */,
+				43F6A0E526C033D800A74DD4 /* AccountListViewModel.swift in Sources */,
+				43F6A0E326C01AE600A74DD4 /* AccountModel.swift in Sources */,
+				43F6A0EB26C05DB300A74DD4 /* AccountView.swift in Sources */,
 				43F6A0C226BD4E0400A74DD4 /* BankingContentView.swift in Sources */,
+				43F6A0E926C059E000A74DD4 /* ConversionUtils.swift in Sources */,
+				43F6A0E726C04C1600A74DD4 /* TotalBallanceViewModel.swift in Sources */,
+				43F6A0E126C01A2200A74DD4 /* AccountRepository.swift in Sources */,
 				43F6A0C026BD4E0400A74DD4 /* BankingApp.swift in Sources */,
 				43F6A0DC26C009C500A74DD4 /* DepositView.swift in Sources */,
 			);
