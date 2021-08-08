@@ -9,10 +9,18 @@ import SwiftUI
 
 struct BankingContentView: View {
     var body: some View {
-        Image("bella")
-            .clipShape(Circle())
-            .shadow(radius: 10)
-            .overlay(Circle().stroke(Color.red, lineWidth: 5))
+        HStack(spacing: 30) {
+            Image("bella")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .clipShape(Circle())
+                .frame(width: 80, height: 80)
+            Spacer()
+            VStack(spacing: 5) {
+                Text("Total Ballance:")
+                Text("100.000 RON")
+            }.padding(15)
+        }
         TabView {
             HomeView().tabItem {
                 Image(systemName: "house.circle")
