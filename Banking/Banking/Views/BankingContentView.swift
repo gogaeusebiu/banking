@@ -35,7 +35,7 @@ struct BankingContentView: View {
                 Text("Deposits")
             }
             
-            TransferView().tabItem {
+            TransferView(transferViewModel: TransferViewModel()).tabItem {
                 Image(systemName: "arrow.up.arrow.down.circle")
                 Text("Transfer")
             }

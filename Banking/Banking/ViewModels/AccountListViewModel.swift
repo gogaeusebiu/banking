@@ -21,4 +21,11 @@ final class AccountListViewModel: ObservableObject {
     func update(_ account: AccountModel) {
         accountRepository.update(account)
     }
+    
+    func transfer(_ amount: Double,_ fromAccount: AccountModel, _ toAccount: AccountModel) {
+        if fromAccount.amount < amount {
+            return
+        }
+        
+    }
 }

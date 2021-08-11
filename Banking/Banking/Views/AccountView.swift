@@ -13,9 +13,9 @@ struct AccountView: View {
     var body: some View {
         RoundedRectangle(cornerRadius: 6)
             .fill(Color.white)
-            .frame(height: 120)
+            .frame(height: 70)
             .overlay(
-                ZStack {
+                VStack(spacing:10) {
                     HStack {
                         VStack {
                             Text("\(account.accountNumber)")
@@ -26,7 +26,7 @@ struct AccountView: View {
                     VStack {
                         HStack {
                             Spacer()
-                            Text("\(account.amount)").fontWeight(.bold)
+                            Text("\(String(format: "%.2f", account.amount))").fontWeight(.bold)
                             switch account.currency {
                             case "euro":
                                 Image(systemName: "eurosign.circle")
