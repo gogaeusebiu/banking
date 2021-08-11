@@ -15,13 +15,10 @@ final class TotalBallanceViewModel: ObservableObject {
     
     init() {
         accountRepository.$accounts.sink { accounts in
+            self.totalBallance = 0.0
             for account in accounts {
                 self.totalBallance += ConversionUtils.convertToRON(account)
             }
         }.store(in: &cancellables)
-    }
-    
-    func update(_ account: AccountModel) {
-        accountRepository.update(account)
     }
 }

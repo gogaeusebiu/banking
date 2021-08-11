@@ -8,13 +8,34 @@
 import SwiftUI
 
 struct DepositView: View {
+    @ObservedObject var depositListViewModel: DepositListViewModel
+    
+    @State private var showingForm = false
+        
     var body: some View {
-        Text("Hello, Deposit!")
-    }
-}
-
-struct DepositView_Previews: PreviewProvider {
-    static var previews: some View {
-        DepositView()
+        NavigationView {
+            ZStack {
+                List(depositListViewModel.deposits) { deposit in
+                    DepositCellView(deposit: deposit)
+                }
+                VStack {
+                    Spacer()
+                    HStack {
+                        Button(action: {
+                            showingForm = true
+                        }) {
+                            Circle()
+                                .fill(Color.green)
+                                .frame(height: 60)
+                                .overlay(Image(systemName: "plus").foregroundColor(.white))
+                        }.sheet(isPresented: $showingForm) {
+                            AddDepositView(createDepositViewModel: CreateDepositViewModel()) {
+                                showingForm = false
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -30,7 +30,7 @@ struct BankingContentView: View {
                 Text("Home")
             }
             
-            DepositView().tabItem {
+            DepositView(depositListViewModel: DepositListViewModel()).tabItem {
                 Image(systemName: "dollarsign.circle")
                 Text("Deposits")
             }

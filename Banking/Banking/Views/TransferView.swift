@@ -22,8 +22,6 @@ struct TransferView: View {
             VStack(spacing:5) {
                 TextField("Amount", text: $transferViewModel.transferAmount)
                     .padding()
-                    .foregroundColor(.white)
-                    .accentColor(Color.white)
                     .background(Color(.systemGray6))
                     .cornerRadius(5)
                     

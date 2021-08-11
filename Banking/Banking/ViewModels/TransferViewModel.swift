@@ -21,7 +21,6 @@ final class TransferViewModel: ObservableObject {
     @Published var isValid = false
     
     private var cancellables: Set<AnyCancellable> = []
-    private static let numberPredicate = NSPredicate(format: "SELF MATCHES %@", "^[0-9]+\\.?[0-9]*$")
     
     private var isTransferAmountEmptyPublisher: AnyPublisher<Bool, Never> {
         $transferAmount.debounce(for: 0.8, scheduler: RunLoop.main)
@@ -33,7 +32,7 @@ final class TransferViewModel: ObservableObject {
     private var isTransferAmountValidNumberPublisher: AnyPublisher<Bool, Never> {
         $transferAmount.debounce(for: 0.8, scheduler: RunLoop.main)
             .removeDuplicates()
-            .map { Self.numberPredicate.evaluate(with: $0) }
+            .map { Utils.numberPredicate.evaluate(with: $0) }
             .eraseToAnyPublisher()
     }
     

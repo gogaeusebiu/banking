@@ -18,7 +18,6 @@ struct DropdownView: View {
         VStack(alignment: .leading, spacing: 15) {
             Text(dropdownTitle)
                 .font(.title3)
-                .padding(.all)
             
             DisclosureGroup(selectedAccountNumber, isExpanded: $isExpanded) {
                 VStack {

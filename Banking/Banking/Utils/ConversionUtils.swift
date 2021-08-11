@@ -7,13 +7,6 @@
 
 import Foundation
 
-enum TransferAmountStatus {
-    case amountEmpty
-    case amountIsNotANumber
-    case amountIsToBig
-    case valid
-}
-
 class ConversionUtils {
     static func convertToRON(_ account: AccountModel) -> Double {
         switch account.currency {

@@ -17,15 +17,4 @@ final class AccountListViewModel: ObservableObject {
         accountRepository.$accounts.assign(to: \.accounts, on: self)
             .store(in: &cancellables)
     }
-    
-    func update(_ account: AccountModel) {
-        accountRepository.update(account)
-    }
-    
-    func transfer(_ amount: Double,_ fromAccount: AccountModel, _ toAccount: AccountModel) {
-        if fromAccount.amount < amount {
-            return
-        }
-        
-    }
 }

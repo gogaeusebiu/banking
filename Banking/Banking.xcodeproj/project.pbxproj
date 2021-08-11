@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		43E9595C26C1669C00AFB845 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9595B26C1669C00AFB845 /* DropdownView.swift */; };
 		43E9596026C29E4200AFB845 /* TransferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9595F26C29E4200AFB845 /* TransferViewModel.swift */; };
+		43E9596226C410AD00AFB845 /* AddDepositView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9596126C410AD00AFB845 /* AddDepositView.swift */; };
+		43E9596426C411DD00AFB845 /* DepositRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9596326C411DD00AFB845 /* DepositRepository.swift */; };
+		43E9596626C4134800AFB845 /* DepositModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9596526C4134800AFB845 /* DepositModel.swift */; };
+		43E9596826C4293800AFB845 /* DepositListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9596726C4293800AFB845 /* DepositListViewModel.swift */; };
+		43E9596A26C42A7C00AFB845 /* DepositCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9596926C42A7C00AFB845 /* DepositCellView.swift */; };
+		43E9596C26C440C000AFB845 /* CreateDepositViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9596B26C440C000AFB845 /* CreateDepositViewModel.swift */; };
+		43E9596E26C447DB00AFB845 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9596D26C447DB00AFB845 /* Utils.swift */; };
 		43F6A0C026BD4E0400A74DD4 /* BankingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F6A0BF26BD4E0400A74DD4 /* BankingApp.swift */; };
 		43F6A0C226BD4E0400A74DD4 /* BankingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F6A0C126BD4E0400A74DD4 /* BankingContentView.swift */; };
 		43F6A0C426BD4E0600A74DD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43F6A0C326BD4E0600A74DD4 /* Assets.xcassets */; };
@@ -30,6 +37,13 @@
 /* Begin PBXFileReference section */
 		43E9595B26C1669C00AFB845 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
 		43E9595F26C29E4200AFB845 /* TransferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewModel.swift; sourceTree = "<group>"; };
+		43E9596126C410AD00AFB845 /* AddDepositView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDepositView.swift; sourceTree = "<group>"; };
+		43E9596326C411DD00AFB845 /* DepositRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositRepository.swift; sourceTree = "<group>"; };
+		43E9596526C4134800AFB845 /* DepositModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositModel.swift; sourceTree = "<group>"; };
+		43E9596726C4293800AFB845 /* DepositListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositListViewModel.swift; sourceTree = "<group>"; };
+		43E9596926C42A7C00AFB845 /* DepositCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositCellView.swift; sourceTree = "<group>"; };
+		43E9596B26C440C000AFB845 /* CreateDepositViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateDepositViewModel.swift; sourceTree = "<group>"; };
+		43E9596D26C447DB00AFB845 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		43F6A0BC26BD4E0400A74DD4 /* Banking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Banking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43F6A0BF26BD4E0400A74DD4 /* BankingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingApp.swift; sourceTree = "<group>"; };
 		43F6A0C126BD4E0400A74DD4 /* BankingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +75,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43E9596F26C44BFC00AFB845 /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				43F6A0EA26C05DB300A74DD4 /* AccountView.swift */,
+				43E9595B26C1669C00AFB845 /* DropdownView.swift */,
+				43E9596926C42A7C00AFB845 /* DepositCellView.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
 		43F6A0B326BD4E0400A74DD4 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +109,7 @@
 				43F6A0D626C008F200A74DD4 /* Models */,
 				43F6A0D826C0096200A74DD4 /* ViewModels */,
 				43F6A0D526C008E300A74DD4 /* Views */,
+				43E9596F26C44BFC00AFB845 /* ViewComponents */,
 				43F6A0BF26BD4E0400A74DD4 /* BankingApp.swift */,
 				43F6A0C326BD4E0600A74DD4 /* Assets.xcassets */,
 				43F6A0C826BD4E0600A74DD4 /* Info.plist */,
@@ -109,8 +134,7 @@
 				43F6A0D926C0099900A74DD4 /* HomeView.swift */,
 				43F6A0DB26C009C500A74DD4 /* DepositView.swift */,
 				43F6A0DD26C009E500A74DD4 /* TransferView.swift */,
-				43F6A0EA26C05DB300A74DD4 /* AccountView.swift */,
-				43E9595B26C1669C00AFB845 /* DropdownView.swift */,
+				43E9596126C410AD00AFB845 /* AddDepositView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -119,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				43F6A0E226C01AE600A74DD4 /* AccountModel.swift */,
+				43E9596526C4134800AFB845 /* DepositModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -127,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				43F6A0E026C01A2200A74DD4 /* AccountRepository.swift */,
+				43E9596326C411DD00AFB845 /* DepositRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -137,6 +163,8 @@
 				43F6A0E426C033D800A74DD4 /* AccountListViewModel.swift */,
 				43F6A0E626C04C1600A74DD4 /* TotalBallanceViewModel.swift */,
 				43E9595F26C29E4200AFB845 /* TransferViewModel.swift */,
+				43E9596726C4293800AFB845 /* DepositListViewModel.swift */,
+				43E9596B26C440C000AFB845 /* CreateDepositViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -145,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				43F6A0E826C059E000A74DD4 /* ConversionUtils.swift */,
+				43E9596D26C447DB00AFB845 /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -230,14 +259,21 @@
 				43F6A0DE26C009E500A74DD4 /* TransferView.swift in Sources */,
 				43F6A0E526C033D800A74DD4 /* AccountListViewModel.swift in Sources */,
 				43F6A0E326C01AE600A74DD4 /* AccountModel.swift in Sources */,
+				43E9596426C411DD00AFB845 /* DepositRepository.swift in Sources */,
+				43E9596826C4293800AFB845 /* DepositListViewModel.swift in Sources */,
 				43F6A0EB26C05DB300A74DD4 /* AccountView.swift in Sources */,
+				43E9596626C4134800AFB845 /* DepositModel.swift in Sources */,
 				43E9595C26C1669C00AFB845 /* DropdownView.swift in Sources */,
 				43F6A0C226BD4E0400A74DD4 /* BankingContentView.swift in Sources */,
+				43E9596226C410AD00AFB845 /* AddDepositView.swift in Sources */,
+				43E9596A26C42A7C00AFB845 /* DepositCellView.swift in Sources */,
 				43F6A0E926C059E000A74DD4 /* ConversionUtils.swift in Sources */,
 				43F6A0E726C04C1600A74DD4 /* TotalBallanceViewModel.swift in Sources */,
 				43F6A0E126C01A2200A74DD4 /* AccountRepository.swift in Sources */,
+				43E9596E26C447DB00AFB845 /* Utils.swift in Sources */,
 				43E9596026C29E4200AFB845 /* TransferViewModel.swift in Sources */,
 				43F6A0C026BD4E0400A74DD4 /* BankingApp.swift in Sources */,
+				43E9596C26C440C000AFB845 /* CreateDepositViewModel.swift in Sources */,
 				43F6A0DC26C009C500A74DD4 /* DepositView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
