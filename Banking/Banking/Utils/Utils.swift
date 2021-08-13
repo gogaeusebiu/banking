@@ -16,7 +16,7 @@ enum AmountStatus {
 
 enum AccountStatus {
     case accountEmpty
-    case accountsAreDifferet
+    case accountsAreTheSame
     case valid
 }
 

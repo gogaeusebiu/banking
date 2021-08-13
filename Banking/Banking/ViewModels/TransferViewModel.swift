@@ -79,8 +79,8 @@ final class TransferViewModel: ObservableObject {
         Publishers.CombineLatest(areTransferAccountsDifferentPublisher, areTransferAccountsFilledPublisher)
             .debounce(for: 0.8, scheduler: RunLoop.main)
             .map {
-                if $0 { return AccountStatus.accountsAreDifferet}
-                if $1 { return AccountStatus.accountEmpty }
+                if !$0 { return AccountStatus.accountsAreTheSame}
+                if !$1 { return AccountStatus.accountEmpty }
                 return AccountStatus.valid
             }
             .eraseToAnyPublisher()
@@ -127,7 +127,7 @@ final class TransferViewModel: ObservableObject {
                    switch accountStatus {
                    case .accountEmpty:
                        return "Please select account"
-                   case .accountsAreDifferet:
+                   case .accountsAreTheSame:
                        return "You selected the same account"
                    case .valid:
                        return ""

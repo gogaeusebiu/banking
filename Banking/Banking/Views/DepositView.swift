@@ -50,6 +50,6 @@ struct DepositView: View {
             .onAppear {
                 self.isNavigationBarHidden = true
             }
-        }.padding(.zero)
+        }
     }
 }

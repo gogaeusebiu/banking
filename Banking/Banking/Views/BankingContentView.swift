@@ -16,7 +16,7 @@ struct BankingContentView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .clipShape(Circle())
-                .frame(width: 80, height: 80)
+                .frame(width: 90)
                 .shadow(radius: 5)
             VStack(spacing: 5) {
                 HStack(spacing: 10) {
@@ -28,6 +28,10 @@ struct BankingContentView: View {
                             .font(.system(size: 14))
                         
                     }.padding()
+                    .background(Color(.systemGray6))
+                    .shadow(radius: 2)
+                    .cornerRadius(5)
+                    
                     VStack(spacing: 5) {
                         Text("Deposits Ballance:")
                             .font(.system(size: 10))
@@ -36,11 +40,18 @@ struct BankingContentView: View {
                             .font(.system(size: 14))
                         
                     }.padding()
+                    .background(Color(.systemGray6))
+                    .shadow(radius: 2)
+                    .cornerRadius(5)
                 }
-                
-                Text("Total: \(String(format: "%.2f", totalBallanceViewModel.accountsBallance + totalBallanceViewModel.depositsBallance)) RON")
-                    .font(.system(size: 14))
-            }
+                VStack(spacing: 5) {
+                    Text("Total: \(String(format: "%.2f", totalBallanceViewModel.accountsBallance + totalBallanceViewModel.depositsBallance)) RON")
+                        .font(.system(size: 14))
+                }.padding()
+                .background(Color(.systemGray6))
+                .shadow(radius: 2)
+                .cornerRadius(5)
+            }.padding()
         }
         
         TabView {
