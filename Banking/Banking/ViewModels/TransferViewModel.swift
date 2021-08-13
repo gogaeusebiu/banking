@@ -50,6 +50,13 @@ final class TransferViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }
     
+    private var areTransferAccountsFilledPublisher: AnyPublisher<Bool, Never> {
+        Publishers.CombineLatest($transferToAccount, $transferFromAccount)
+            .debounce(for: 0.8, scheduler: RunLoop.main)
+            .map { return !$0.isEmpty && !$1.isEmpty }
+            .eraseToAnyPublisher()
+    }
+    
     private var areTransferAccountsDifferentPublisher: AnyPublisher<Bool, Never> {
         Publishers.CombineLatest($transferToAccount, $transferFromAccount)
             .debounce(for: 0.8, scheduler: RunLoop.main)
@@ -57,21 +64,32 @@ final class TransferViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }
     
-    private var isAmountValidPublisher: AnyPublisher<TransferAmountStatus, Never> {
+    private var isAmountValidPublisher: AnyPublisher<AmountStatus, Never> {
         Publishers.CombineLatest3(isTransferAmountEmptyPublisher, isTransferAmountToBigPublisher, isTransferAmountValidNumberPublisher)
             .map {
-                if $0 { return TransferAmountStatus.amountEmpty }
-                if $1 { return TransferAmountStatus.amountIsToBig }
-                if !$2 { return TransferAmountStatus.amountIsNotANumber }
-                return TransferAmountStatus.valid
+                if $0 { return AmountStatus.amountEmpty }
+                if $1 { return AmountStatus.amountIsToBig }
+                if !$2 { return AmountStatus.amountIsNotANumber }
+                return AmountStatus.valid
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    private var areTransferAccountsValidPublisher: AnyPublisher<AccountStatus, Never> {
+        Publishers.CombineLatest(areTransferAccountsDifferentPublisher, areTransferAccountsFilledPublisher)
+            .debounce(for: 0.8, scheduler: RunLoop.main)
+            .map {
+                if $0 { return AccountStatus.accountsAreDifferet}
+                if $1 { return AccountStatus.accountEmpty }
+                return AccountStatus.valid
             }
             .eraseToAnyPublisher()
     }
     
     private var isTransferValidPublisher: AnyPublisher<Bool, Never> {
-        Publishers.CombineLatest(isAmountValidPublisher, areTransferAccountsDifferentPublisher)
+        Publishers.CombineLatest3(isAmountValidPublisher, areTransferAccountsDifferentPublisher, areTransferAccountsFilledPublisher)
             .map {
-                $0 == .valid && $1
+                $0 == .valid && $1 && $2
             }
             .eraseToAnyPublisher()
     }
@@ -103,9 +121,18 @@ final class TransferViewModel: ObservableObject {
             .assign(to: \.inlineErrorForAmount, on: self)
             .store(in: &cancellables)
         
-        areTransferAccountsDifferentPublisher
+        areTransferAccountsValidPublisher
             .dropFirst()
-            .map { $0 ? "" : "You selected the same account" }
+            .map { accountStatus in
+                   switch accountStatus {
+                   case .accountEmpty:
+                       return "Please select account"
+                   case .accountsAreDifferet:
+                       return "You selected the same account"
+                   case .valid:
+                       return ""
+                   }
+            }
             .assign(to: \.inlineErrorForAccounts, on: self)
             .store(in: &cancellables)
     }

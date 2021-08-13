@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43BB6DA126C56B4400134208 /* AppDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BB6DA026C56B4400134208 /* AppDateFormatter.swift */; };
 		43E9595C26C1669C00AFB845 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9595B26C1669C00AFB845 /* DropdownView.swift */; };
 		43E9596026C29E4200AFB845 /* TransferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9595F26C29E4200AFB845 /* TransferViewModel.swift */; };
 		43E9596226C410AD00AFB845 /* AddDepositView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E9596126C410AD00AFB845 /* AddDepositView.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43BB6DA026C56B4400134208 /* AppDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDateFormatter.swift; sourceTree = "<group>"; };
 		43E9595B26C1669C00AFB845 /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
 		43E9595F26C29E4200AFB845 /* TransferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewModel.swift; sourceTree = "<group>"; };
 		43E9596126C410AD00AFB845 /* AddDepositView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDepositView.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			children = (
 				43F6A0E826C059E000A74DD4 /* ConversionUtils.swift */,
 				43E9596D26C447DB00AFB845 /* Utils.swift */,
+				43BB6DA026C56B4400134208 /* AppDateFormatter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				43F6A0DE26C009E500A74DD4 /* TransferView.swift in Sources */,
 				43F6A0E526C033D800A74DD4 /* AccountListViewModel.swift in Sources */,
 				43F6A0E326C01AE600A74DD4 /* AccountModel.swift in Sources */,
+				43BB6DA126C56B4400134208 /* AppDateFormatter.swift in Sources */,
 				43E9596426C411DD00AFB845 /* DepositRepository.swift in Sources */,
 				43E9596826C4293800AFB845 /* DepositListViewModel.swift in Sources */,
 				43F6A0EB26C05DB300A74DD4 /* AccountView.swift in Sources */,

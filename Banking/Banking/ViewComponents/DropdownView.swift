@@ -39,6 +39,8 @@ struct DropdownView: View {
             .padding(.all)
             .background(Color.purple)
             .cornerRadius(5)
+            .shadow(radius: 2)
+
         }
     }
 }

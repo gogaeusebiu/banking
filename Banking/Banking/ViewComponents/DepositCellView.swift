@@ -9,9 +9,29 @@ import SwiftUI
 
 struct DepositCellView: View {
     var deposit: DepositModel
+    var didCollectDeposit: (_ deposit: DepositModel) -> Void
+    
+    
+    private func isFutureDate() -> Bool {
+        let createdDate = AppDateFormatter.sharedManager.dateFromString(date: deposit.createdDate)
+        let depositEndDate = AppDateFormatter.sharedManager.addYearsToDate(createdDate, deposit.periodOfTimeYears)
+        
+        return AppDateFormatter.sharedManager.isFutureDate(depositEndDate)
+    }
+    
+    private func depositEndDateString() -> String {
+        let createdDate = AppDateFormatter.sharedManager.dateFromString(date: deposit.createdDate)
+        let depositEndDate = AppDateFormatter.sharedManager.addYearsToDate(createdDate, deposit.periodOfTimeYears)
+        
+        return AppDateFormatter.sharedManager.stringFromDate(date: depositEndDate)
+    }
+    
+    private func getBackroundColor() -> Color {
+        isFutureDate() ? Color(.systemGray6) : Color(.systemGreen)
+    }
     
     var body: some View {
-        VStack(spacing:10) {
+        VStack() {
             HStack {
                 Text(deposit.depositNumber).font(.system(size: 12)).padding(.all)
                 Spacer()
@@ -19,7 +39,7 @@ struct DepositCellView: View {
             }
             
             HStack {
-                Text(String(deposit.amountGain)).font(.largeTitle).padding(.all)
+                Text(String(format: "%.2f", deposit.amountGain)).font(.largeTitle).padding(.all)
                 Spacer()
                 Text("RON").font(.largeTitle).padding(.all)
             }
@@ -30,9 +50,30 @@ struct DepositCellView: View {
             }
             
             HStack {
-                Text("Deposit will be gain on \(deposit.periodOfTimeYears)").font(.system(size: 14)).padding(.all)
+                Text("Deposit will be gain on \(self.depositEndDateString())").font(.system(size: 14)).padding(.all)
                 Spacer()
             }
-        }
+            
+            HStack {
+                if self.isFutureDate() {
+                    Text("Swipe <- to delete and get the money now on RON account").font(.system(size: 14)).padding(.all)
+                } else {
+                    Spacer()
+                    Button {
+                        didCollectDeposit(self.deposit)
+                    } label: {
+                        Text("Collect Money")
+                            .frame(width: 150, height: 30, alignment: .center)
+                            .font(.system(size: 16))
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }.shadow(radius: 2)
+                }
+                Spacer()
+                
+            }.padding(.bottom)
+            
+        }.background(getBackroundColor())
     }
 }

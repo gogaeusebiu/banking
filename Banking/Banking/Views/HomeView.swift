@@ -9,10 +9,13 @@ import SwiftUI
 
 struct HomeView: View {
     @ObservedObject var accountListViewModel: AccountListViewModel
-    
+        
     var body: some View {
         List(accountListViewModel.accounts) { account in
             AccountView(account: account)
+                .cornerRadius(5)
+                .shadow(radius: 5)
+
         }
     }
 }

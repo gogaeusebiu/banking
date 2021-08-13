@@ -24,6 +24,8 @@ struct TransferView: View {
                     .padding()
                     .background(Color(.systemGray6))
                     .cornerRadius(5)
+                    .shadow(radius: 2)
+
                     
                 Text(self.transferViewModel.inlineErrorForAmount)
                     .foregroundColor(.red)
@@ -55,6 +57,8 @@ struct TransferView: View {
                     .cornerRadius(8)
             }.padding()
             .disabled(!transferViewModel.isValid)
+            .shadow(radius: 2)
+
             
         }
     }
