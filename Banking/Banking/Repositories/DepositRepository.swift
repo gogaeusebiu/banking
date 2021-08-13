@@ -12,9 +12,14 @@ import Combine
 final class DepositRepository: ObservableObject {
     private let path = "deposits"
     private let store = Firestore.firestore()
+    private let settings = FirestoreSettings()
+
     @Published var deposits: [DepositModel] = []
     
     init() {
+        settings.isPersistenceEnabled = true
+        store.settings = settings
+        
         getDeposits()
     }
     

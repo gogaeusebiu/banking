@@ -12,9 +12,14 @@ import Combine
 final class AccountRepository: ObservableObject {
     private let path = "accounts"
     private let store = Firestore.firestore()
+    private let settings = FirestoreSettings()
+    
     @Published var accounts: [AccountModel] = []
     
     init() {
+        settings.isPersistenceEnabled = true
+        store.settings = settings
+        
         getAccounts()
     }
     

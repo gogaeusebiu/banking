@@ -125,13 +125,21 @@ final class CreateDepositViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .map { isPeriodInfoAvailable in
                 if isPeriodInfoAvailable {
-                    return "The amount gain at the end of deposit is \(String(format: "%.2f", Utils.calculateDepositAmountGain( Double(self.depositAmount)!, Double(self.depositPeriod)!))) RON"
+                    return "The amount gain at the end of deposit is \(String(format: "%.2f", self.calculateDepositAmountGain())) RON"
                 } else {
                     return ""
                 }
             }
             .assign(to: \.inlineInfoTextForPeriod, on:self)
             .store(in: &cancellables)
+    }
+    
+    private func calculateDepositAmountGain() -> Double {
+        let i = self.accounts.firstIndex(where: { $0.accountNumber == self.transferFromAccount })!
+        let account = self.accounts[i]
+        let ronAmount = ConversionUtils.convert(account.currency, "leu", for: Double(self.depositAmount)!)
+
+        return Utils.calculateDepositAmountGain(ronAmount, Double(self.depositPeriod)!)
     }
     
     func add() {
